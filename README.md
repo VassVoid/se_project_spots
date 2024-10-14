@@ -37,6 +37,15 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 ![Val Thorens](./images/1-photo-by-moritz-feldmann-from-pexels.jpg)
+![Restaurant terrace](./images/2-photo-by-ceiline-from-pexels.jpg)
+![An outdoor cafe](./images/3-photo-by-tubanur-dogan-from-pexels.jpg)
+![A long bridge over a forest](./images/4-photo-by-maurice-laschet-from-pexels.jpg)
+![Tunnel with morning light](./images/5-photo-by-van-anh-nguyen-from-pexels.jpg)
+![Mountain House](./images/6-photo-by-moritz-feldmann-from-pexels.jpg)
+![Picture of Bessie Coleman](./images/avatar.jpg)
+![Like Button on Photos](./images/heart.svg)
+![SPOTS Logo](./images/logo.svg)
+![Plus sign on New Post Button](./images/pencil.svg)
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
