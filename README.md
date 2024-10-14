@@ -1,10 +1,10 @@
-# Project 3: Spots
+**# Project 3: Spots**
 
-## Description
+**## Description**
 
 Spots is a simple social media platform where you can post pictures and write different things about yourself online. This website is available to use for any device whether its a phone, tablet, or even your computer.
 
-## Tech Stack
+**## Tech Stack**
 
 - HTML
   I used html to build the foundation of the website using different things such as semantic tags, classes, meta tags, stylesheets and etc.
@@ -15,13 +15,13 @@ Spots is a simple social media platform where you can post pictures and write di
 - Responsive Design
   I used media queries in order to make this website usable on phones, tablets, and even computers so you can use it on any device.
 
-## Deployment
+**## Deployment**
 
 This webpage is deployed to Github Pages
 
 = Deployment Link:
 
-### Overview
+**### Overview**
 
 - Intro
 - Figma
@@ -36,6 +36,7 @@ This project is made so all the elements are displayed correctly on popular scre
 - [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
 
 **Images**
+![Val Thorens](./images/1-photo-by-moritz-feldmann-from-pexels.jpg)
 
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
