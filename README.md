@@ -19,7 +19,7 @@ Spots is a simple social media platform where you can post pictures and write di
 
 This webpage is deployed to Github Pages
 
-= Deployment Link:
+- [Deployment Link](https://vassvoid.github.io/se_project_spots/)
 
 **### Overview**
 
