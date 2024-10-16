@@ -19,6 +19,8 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
+  max-width: 353px;
+  height: 24px;
 }
 
 .card__content {
@@ -31,10 +33,15 @@
   background-image: url(../images/heart.svg);
   width: 23px;
   height: 20px;
-  border: none;
   background-color: transparent;
   opacity: 40%;
   margin-bottom: auto;
+  padding: 0;
+  border: none;
+}
+
+.card_like-btn:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
