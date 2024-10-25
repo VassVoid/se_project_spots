@@ -21,6 +21,10 @@ This webpage is deployed to Github Pages
 
 - [Deployment Link](https://vassvoid.github.io/se_project_spots/)
 
+**## Video Link**
+
+- [Video Link](https://drive.google.com/file/d/1fsrDfsB1Oo92D99NowsW0BWsIh4EAvAI/view?usp=sharing)
+
 **### Overview**
 
 - Intro
