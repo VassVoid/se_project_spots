@@ -30,8 +30,9 @@
   color: rgba(33, 33, 33, 0.7);
 }
 
-.profile_edit-btn:hover {
+.profile__edit-btn:hover {
   cursor: pointer;
+  color: rgba(33, 33, 33, 1);
 }
 
 .profile__image {
@@ -78,12 +79,7 @@
 
 .profile__add-btn:hover {
   cursor: pointer;
-}
-
-.profile__add-btn-column {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+  opacity: 0.8;
 }
 
 .profile__add-btn-image {
