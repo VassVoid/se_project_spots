@@ -90,13 +90,13 @@
     line-height: 1;
   }
 
-  .model__close-btn {
+  .modal__close-btn {
     top: 12px;
     right: 12px;
     padding: 0;
   }
 
-  .model__label {
+  .modal__label {
     margin-bottom: 24px;
   }
 
