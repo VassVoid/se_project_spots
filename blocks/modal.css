@@ -80,6 +80,10 @@
   font-weight: 500;
 }
 
+.modal__submit-btn:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
