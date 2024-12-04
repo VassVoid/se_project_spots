@@ -63,14 +63,14 @@
       <footer class="footer">
         <p class="footer__description">2023 &copy; Spots</p>
       </footer>
-      <div class="modal modal__opened" id="edit-modal">
+      <div class="modal" id="edit-modal">
         <div class="modal__container">
-          <button type="submit" class="modal__close-btn">
+          <button type="button" class="modal__close-btn">
             <img src="./images/xbutton.svg" alt="" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
 
-          <form name="edit-profile" action="" class="modal__form">
+          <form id="profile-form" name="edit-profile" class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
