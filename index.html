@@ -46,14 +46,19 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
+                <button class="card__delete-btn" type="button"></button>
                 <img
                   src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
                   alt="Val Thorens"
                   class="card__image"
                 />
+
                 <div class="card__content">
                   <h2 class="card__title">Mountain house</h2>
-                  <button type="button" class="card__like-btn"></button>
+                  <button
+                    type="button"
+                    class="card__like-btn card__like-btn_liked"
+                  ></button>
                 </div>
               </li>
             </template>
