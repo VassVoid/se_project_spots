@@ -67,6 +67,10 @@ function getCardElement(data) {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
+  cardDeleteBtn.addEventListener("click", () => {
+    cardDeleteBtn.classList.remove("card");
+  });
+
   // set the listener on delete button
   // The handler should remove the card from the DOM
 

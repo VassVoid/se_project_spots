@@ -1,5 +1,6 @@
 .card {
   width: 413px;
+  position: relative;
 }
 
 .card__image {
@@ -55,13 +56,16 @@
 
 .card__delete-btn {
   background-image: url(../images/delete-icon.svg);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 32px;
   height: 32px;
   border: none;
-  position: relative;
+  position: absolute;
   bottom: 10px;
   left: 371px;
   padding: 0;
+  top: 15px;
+  right: 15px;
 }
 
 .card__delete-btn:hover {
