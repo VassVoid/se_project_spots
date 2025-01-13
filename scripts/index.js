@@ -34,13 +34,13 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 // Form Elements
 const editModal = document.querySelector("#edit-modal");
 const editForm = editModal.querySelector(".modal__form");
-const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
+const editModalCloseBtn = editModal.querySelector(".modal__close");
 const nameInput = editModal.querySelector("#profile-name-input");
 const descriptionInput = editModal.querySelector("#profile-description-input");
 
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
-const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
+const cardModalCloseBtn = cardModal.querySelector(".modal__close");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
@@ -68,11 +68,8 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardDeleteBtn.classList.remove("card");
+    cardElement.remove("card__image");
   });
-
-  // set the listener on delete button
-  // The handler should remove the card from the DOM
 
   return cardElement;
 }

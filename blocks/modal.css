@@ -17,7 +17,7 @@
   visibility: visible;
 }
 
-.modal__container {
+.modal__content {
   background: #fff;
   padding: 32px 50px;
   max-width: 730px;
@@ -27,7 +27,15 @@
   border-radius: 8px;
 }
 
-.modal__close-btn {
+.modal__content_type_preview {
+  padding: 0;
+}
+
+.modal__image {
+  width: 100%;
+}
+
+.modal__close {
   position: absolute;
   top: 32px;
   right: 50px;
@@ -36,7 +44,13 @@
   background-color: #fff;
 }
 
-.modal__close-btn:hover {
+.modal__close_type_preview {
+  background-image: url("../images/close-light.svg");
+  top: 0;
+  right: -32px;
+}
+
+.modal__close:hover {
   cursor: pointer;
   opacity: 100%;
 }
@@ -105,7 +119,7 @@
     line-height: 1;
   }
 
-  .modal__close-btn {
+  .modal__close {
     top: 12px;
     right: 12px;
     padding: 0;
