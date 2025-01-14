@@ -1,3 +1,7 @@
+// TODO - finish styling preview modal
+// TODO - make preview responseive
+// TODO add the card to the invitalCards array
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -22,6 +26,9 @@ const initialCards = [
   {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+
+    name: "San Francisco Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
 ];
 
@@ -44,6 +51,13 @@ const cardModalCloseBtn = cardModal.querySelector(".modal__close");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
+const previewModalDeleteBtn = previewModal.querySelector(
+  ".modal__close_type_preview"
+);
+
 // Card related Elements
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
@@ -57,7 +71,6 @@ function getCardElement(data) {
   const cardImgEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
-  // TODO select the delete tbutton
 
   cardNameEl.textContent = data.name;
   cardImgEl.src = data.link;
@@ -69,6 +82,18 @@ function getCardElement(data) {
 
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove("card__image");
+  });
+
+  cardImgEl.addEventListener("click", () => {
+    openModal(previewModal);
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.link;
+    previewModalCaptionEl.textContent = data.name;
+
+    // select the modal
+    // select the other necessary elemtns
+    // add teh src
+    // add the text content
   });
 
   return cardElement;
@@ -113,6 +138,10 @@ cardModalBtn.addEventListener("click", () => {
 
 cardModalCloseBtn.addEventListener("click", () => {
   closeModal(cardModal);
+});
+
+previewModalDeleteBtn.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 editForm.addEventListener("submit", handleEditFormSubmit);
