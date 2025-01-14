@@ -18,5 +18,8 @@
     grid-template-columns: repeat(auto-fit, 288px);
     gap: 20px;
     padding: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

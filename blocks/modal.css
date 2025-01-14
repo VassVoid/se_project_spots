@@ -71,7 +71,7 @@
   padding: 4px 8px 4px 8px;
   border-radius: 8px;
   background: rgba(33, 33, 33, 1);
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -149,8 +149,8 @@
   }
 
   .modal__close {
-    top: 12px;
-    right: 12px;
+    top: 0px;
+    right: 41px;
     padding: 0;
   }
 
@@ -160,5 +160,18 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__content {
+    display: flex;
+    flex-direction: column;
+    display: inline;
+  }
+
+  .modal__caption {
+  }
+
+  .modal__image {
+    margin-bottom: 8px;
   }
 }
