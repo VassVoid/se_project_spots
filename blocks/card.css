@@ -67,7 +67,6 @@
   border: none;
   position: absolute;
   bottom: 10px;
-  left: 371px;
   padding: 0;
   top: 15px;
   right: 15px;
@@ -79,6 +78,10 @@
 }
 
 @media screen and (max-width: 627px) {
+  .card {
+    width: 288px;
+  }
+
   .card__image {
     height: 288px;
     width: 100%;
