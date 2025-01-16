@@ -100,11 +100,11 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
@@ -120,6 +120,7 @@ function handleAddCardSubmit(evt) {
   const cardEl = getCardElement(inputValues);
   cardList.prepend(cardEl);
   closeModal(cardModal);
+  evt.target.reset(cardModal);
 }
 
 editModalBtn.addEventListener("click", () => {
