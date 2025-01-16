@@ -120,7 +120,7 @@ function handleAddCardSubmit(evt) {
   const cardEl = getCardElement(inputValues);
   cardList.prepend(cardEl);
   closeModal(cardModal);
-  evt.target.reset(cardModal);
+  evt.target.reset();
 }
 
 editModalBtn.addEventListener("click", () => {
