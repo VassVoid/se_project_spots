@@ -39,7 +39,7 @@
 
 .modal__image {
   width: 446.43px;
-  height: 661px;
+  max-height: 661px;
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto 8px;
@@ -183,6 +183,6 @@
   .modal__image {
     border-radius: 4px;
     width: 288px;
-    height: 426.57px;
+    max-height: 426.57px;
   }
 }
