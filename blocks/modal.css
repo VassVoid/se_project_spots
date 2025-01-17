@@ -38,8 +38,8 @@
 }
 
 .modal__image {
-  min-width: 446.43px;
-  height: 661px;
+  width: 446.43px;
+  max-height: 661px;
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto 8px;
@@ -85,7 +85,6 @@
   color: rgba(255, 255, 255, 1);
   text-decoration-skip-ink: none;
   display: flex;
-  max-width: 440px;
 }
 
 .modal__title {
@@ -173,7 +172,7 @@
 
   .modal__caption {
     position: absolute;
-    left: 14px;
+    left: 35px;
     top: calc(100%);
     font-size: 16px;
     font-weight: 500;
