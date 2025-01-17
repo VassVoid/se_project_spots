@@ -38,8 +38,8 @@
 }
 
 .modal__image {
-  width: 446.43px;
-  max-height: 661px;
+  min-width: 446.43px;
+  height: 661px;
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto 8px;
