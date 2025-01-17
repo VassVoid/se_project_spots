@@ -92,4 +92,13 @@
     line-height: 1;
     max-width: 235px;
   }
+
+  .card__content {
+    height: 18px;
+  }
+
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
+  }
 }
