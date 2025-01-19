@@ -45,7 +45,6 @@
   max-height: 100%;
   border-radius: 8px;
   object-fit: cover;
-  margin-bottom: 8px;
 }
 
 .modal__close {
@@ -75,11 +74,10 @@
 
 .modal__caption {
   position: absolute;
-  top: calc(100%);
+  top: calc(100% + 8px);
   padding: 4px 8px 4px 8px;
   border-radius: 8px;
   background: rgba(33, 33, 33, 1);
-  font-family: "Poppins", "Arial", "Helvetica," sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -101,6 +99,7 @@
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .modal__input {
@@ -137,35 +136,44 @@
     padding: 0 10px;
   }
 
-  .modal__container {
-    padding: 12px;
+  .modal__form {
+    position: relative;
+    bottom: 40px;
+    width: 276px;
+    height: 248px;
+    gap: 24px;
   }
 
   .modal__title {
     font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
     margin: 10px 0 34px;
-    width: 227px;
+    width: 276px;
   }
 
   .modal__input {
-    font-weight: 500;
     font-size: 16px;
+    font-weight: 500;
     line-height: 1;
   }
 
   .modal__close {
-    top: 28px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     padding: 0;
   }
 
   .modal__close_type_preview {
-    top: -40px;
+    top: -30px;
     left: 235px;
   }
 
   .modal__label {
     margin-bottom: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 17.6px;
   }
 
   .modal__submit-btn {
@@ -173,15 +181,21 @@
   }
 
   .modal__content {
+    width: 300px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
+    padding: 12px 0px 0px 0px;
+    gap: 24px;
   }
 
   .modal__caption {
     position: absolute;
     left: -16px;
-    top: calc(100%);
+    top: calc(100% + 8px);
+
     font-size: 16px;
     font-weight: 500;
     line-height: 19.2px;
