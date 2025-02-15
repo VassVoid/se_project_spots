@@ -10,22 +10,24 @@ const settings = {
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgID = inputEl.id + "-error";
   const errorMsgEl = formEl.querySelector("#" + errorMsgID);
-  errorMsgEl.textContent = errorMsg;
   inputEl.classList.add(config.inputErrorClass);
+  errorMsgEl.textContent = inputEl.validationMessage;
+  errorMsgEl.classList.add(config.errorClass);
 };
 
 const hideInputError = (formEl, inputEl, config) => {
   const errorMsgID = inputEl.id + "-error";
   const errorMsgEl = formEl.querySelector("#" + errorMsgID);
+  inputEl.classList.remove(inputErrorClass);
   errorMsgEl.textContent = "";
-  inputEl.classList.remove(config.inputErrorClass);
+  errorMsgEl.classList.remove(config.errorClass);
 };
 
 const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
   }
 };
 
@@ -39,17 +41,14 @@ const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
     disableButton(buttonEl, config);
   } else {
+    buttonEl.classList.remove(config.inactiveButtonClass);
     buttonEl.disabled = false;
-    inputList.classList.remove(config.inactiveButtonClass);
-    // remove the disabled class
   }
 };
 
 const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
   buttonEl.classList.add(config.inactiveButtonClass);
-  // Add a modifier class to the buttonEl to make it grey
-  // Don't forget the CSS
 };
 
 const resetValidation = (formEl, inputList, config) => {
@@ -57,8 +56,6 @@ const resetValidation = (formEl, inputList, config) => {
     hideInputError(formEl, input, config);
   });
 };
-
-// To-DO - Use the settings object in all functions instead of hard-coded strings
 
 const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
