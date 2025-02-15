@@ -136,7 +136,7 @@ function handleOverLayClose(evt) {
 editModalBtn.addEventListener("click", () => {
   nameInput.value = profileNameEl.textContent;
   descriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editForm, [nameInput, descriptionInput, settings]);
+  resetValidation(editForm, [nameInput, descriptionInput], settings);
   openModal(editModal);
 });
 
