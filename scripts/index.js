@@ -1,6 +1,4 @@
-// TODO - finish styling preview modal
-// TODO - make preview responseive
-// TODO add the card to the invitalCards array
+// TODO - pass settings object to the validation fucntions that are called in this file
 
 const initialCards = [
   {
@@ -49,8 +47,8 @@ const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
 const cardSubmitBtn = cardModal.querySelector(".modal__submit-btn");
 const cardModalCloseBtn = cardModal.querySelector(".modal__close");
-const cardNameInput = cardModal.querySelector("#add-card-name-input");
-const cardLinkInput = cardModal.querySelector("#add-card-link-input");
+const cardNameInput = cardModal.querySelector("#card-name-input");
+const cardLinkInput = cardModal.querySelector("#card-link-input");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageEl = previewModal.querySelector(".modal__image");
@@ -90,11 +88,6 @@ function getCardElement(data) {
     previewModalImageEl.src = data.link;
     previewModalImageEl.alt = data.link;
     previewModalCaptionEl.textContent = data.name;
-
-    // select the modal
-    // select the other necessary elemtns
-    // add teh src
-    // add the text content
   });
 
   return cardElement;
@@ -102,10 +95,14 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
+  modal.addEventListener("mousedown", handleOverLayClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
+  modal.removeEventListener("mousedown", handleOverLayClose);
 }
 
 function handleEditFormSubmit(evt) {
@@ -121,13 +118,27 @@ function handleAddCardSubmit(evt) {
   const cardEl = getCardElement(inputValues);
   cardList.prepend(cardEl);
   evt.target.reset();
-  disableButton(cardSubmitBtn);
+  disableButton(cardSubmitBtn, settings);
   closeModal(cardModal);
+}
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const activeModal = document.querySelector(".modal_opened");
+    closeModal(activeModal);
+  }
+}
+
+function handleOverLayClose(evt) {
+  if (evt.target.classList.contains(".modal__opened")) {
+    closeModal(evt.target);
+  }
 }
 
 editModalBtn.addEventListener("click", () => {
   nameInput.value = profileNameEl.textContent;
   descriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editForm, [nameInput, descriptionInput, settings]);
   openModal(editModal);
 });
 

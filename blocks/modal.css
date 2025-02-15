@@ -51,7 +51,6 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  opacity: 100%;
   border: none;
   background: url("../images/close-grey.svg") center no-repeat;
   background-size: 35px 35px;
@@ -59,6 +58,7 @@
   height: 40px;
   padding: 0;
   margin: 0;
+  opacity: 40%;
 }
 
 .modal__close_type_preview {
@@ -69,7 +69,7 @@
 
 .modal__close:hover {
   cursor: pointer;
-  opacity: 40%;
+  opacity: 100%;
 }
 
 .modal__caption {
@@ -139,6 +139,11 @@
 
 .modal__submit-btn:hover {
   cursor: pointer;
+  background: rgba(33, 33, 33, 0.8);
+}
+
+.modal__submit-btn_disabled {
+  opacity: 50%;
 }
 
 @media screen and (max-width: 627px) {
