@@ -165,3 +165,8 @@ initialCards.forEach((item, i, arr) => {
   const cardEl = getCardElement(item);
   cardList.append(cardEl);
 });
+
+function renderCard(item, method = "append") {
+  const cardEl = getCardElement(item);
+  cardList["append"](cardEl);
+}
