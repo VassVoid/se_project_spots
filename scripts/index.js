@@ -128,7 +128,7 @@ function handleEscClose(evt) {
 }
 
 function handleOverLayClose(evt) {
-  if (evt.target.classList.contains(".modal_opened")) {
+  if (evt.target.classList.contains("modal")) {
     closeModal(evt.target);
   }
 }
@@ -143,7 +143,7 @@ editModalBtn.addEventListener("click", () => {
 const closeButtons = document.querySelectorAll(".modal__close");
 closeButtons.forEach((button) => {
   const popup = button.closest(".modal");
-  button.addEventListener("click", () => closePopup(popup));
+  button.addEventListener("click", () => closeModal(popup));
 });
 
 cardModalBtn.addEventListener("click", () => {
@@ -165,8 +165,3 @@ initialCards.forEach((item, i, arr) => {
   const cardEl = getCardElement(item);
   cardList.append(cardEl);
 });
-
-function renderCard(item, method = "append") {
-  const cardEl = getCardElement(item);
-  cardList["append"](cardEl);
-}
