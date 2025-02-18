@@ -160,9 +160,9 @@
 
   .modal__form {
     position: relative;
-    bottom: 40px;
+    bottom: 34px;
     width: 276px;
-    height: 248px;
+    height: 344px;
     gap: 24px;
   }
 
@@ -170,8 +170,11 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 20px;
-    margin: 10px 0 34px;
+    margin: 12px 0 24px;
     width: 276px;
+    height: 40px;
+    position: relative;
+    top: -20px;
   }
 
   .modal__input {
@@ -181,13 +184,13 @@
   }
 
   .modal__close {
-    top: 10px;
+    top: 18px;
     right: 15px;
     padding: 0;
   }
 
   .modal__close_type_preview {
-    top: -30px;
+    top: -40px;
     left: 235px;
   }
 
@@ -196,20 +199,23 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 17.6px;
+    height: 104px;
   }
 
   .modal__submit-btn {
     width: 100%;
+    position: relative;
+    bottom: -30px;
+    margin-bottom: 12px;
   }
 
   .modal__content {
     width: 300px;
-
+    height: 432px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    padding: 12px 0px 0px 0px;
     gap: 24px;
   }
 
