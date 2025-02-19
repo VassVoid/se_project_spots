@@ -160,7 +160,7 @@
 
   .modal__form {
     position: relative;
-    bottom: 34px;
+    bottom: 45px;
     width: 276px;
     height: 344px;
     gap: 24px;
@@ -199,13 +199,10 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 17.6px;
-    height: 104px;
   }
 
   .modal__submit-btn {
     width: 100%;
-    position: relative;
-    bottom: -30px;
     margin-bottom: 12px;
   }
 
