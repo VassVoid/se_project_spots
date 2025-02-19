@@ -185,7 +185,7 @@
 
   .modal__close {
     top: 15px;
-    right: 15px;
+    right: 10px;
     padding: 0;
   }
 
@@ -207,7 +207,7 @@
   }
 
   .modal__content {
-    width: 300px;
+    max-width: 300px;
     height: 432px;
     display: flex;
     flex-direction: column;
