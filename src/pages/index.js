@@ -1,3 +1,9 @@
+import "./index.css";
+import { enableValidation, validationConfig } from "../scripts/validation.js";
+
+import { resetValidation } from "../scripts/validation.js";
+import { disableButton } from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -116,7 +122,7 @@ function handleAddCardSubmit(evt) {
   const cardEl = getCardElement(inputValues);
   cardList.prepend(cardEl);
   evt.target.reset();
-  disableButton(cardSubmitBtn, settings);
+  disableButton(cardSubmitBtn, validationConfig);
   closeModal(cardModal);
 }
 
@@ -136,7 +142,7 @@ function handleOverLayClose(evt) {
 editModalBtn.addEventListener("click", () => {
   nameInput.value = profileNameEl.textContent;
   descriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(profileForm, [nameInput, descriptionInput], settings);
+  resetValidation(profileForm, [nameInput, descriptionInput], validationConfig);
   openModal(editModal);
 });
 
@@ -157,3 +163,5 @@ initialCards.forEach((item, i, arr) => {
   const cardEl = getCardElement(item);
   cardList.append(cardEl);
 });
+
+enableValidation(validationConfig);

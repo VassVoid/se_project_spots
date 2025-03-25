@@ -6,19 +6,23 @@
     <meta name="author" content="William Mathurin" />
     <meta name="description" content="???" />
     <meta name="keywords" content="HTML, CSS" />
-    <link rel="stylesheet" href="./pages/index.css" />
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.svg" alt="Spot Logo" class="header__logo" />
+        <img
+          src="<%= require('./images/logo.svg')%>"
+          alt="Spot Logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%= require('./images/avatar.jpg')%>"
             alt="Bessie Coleman"
             class="profile__avatar"
           />
@@ -161,8 +165,6 @@
           <p class="modal__caption"></p>
         </div>
       </div>
-      <script defer src="./scripts/index.js"></script>
-      <script defer src="/scripts/validation.js"></script>
     </div>
   </body>
 </html>
