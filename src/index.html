@@ -21,18 +21,29 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%= require('./images/avatar.jpg')%>"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%= require('./images/pencil-light.svg')%>"
+                alt="Pencil-icon"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              id="image-avatar"
+              src="<%= require('./images/avatar.jpg')%>"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
               <img
                 class="profile__image"
-                src="./images/pencil.svg"
+                id="image-pencil"
+                src="<%= require('./images/pencil.svg')%>"
                 alt="Pencil Icon"
               />Edit Profile
             </button>
@@ -40,7 +51,8 @@
           <button type="button" class="profile__add-btn">
             <img
               class="profile__add-btn-image"
-              src="./images/plus.svg"
+              id="image-plus"
+              src="<%= require('./images/plus.svg')%>"
               alt="Plus Icon"
             />
             <span class="profile__add-btn-text">New Post</span>
