@@ -5,7 +5,12 @@
 }
 
 .profile__avatar-container {
+  margin-right: 20px;
   position: relative;
+}
+
+.profile__avatar-container:hover .profile__avatar-btn {
+  visibility: visible;
 }
 
 .profile__avatar-btn {
@@ -18,6 +23,7 @@
   justify-content: center;
 
   visibility: hidden;
+  /*TODO finish  avtar button style  */
 }
 
 .profile__avatar-btn::after {
@@ -25,7 +31,6 @@
 }
 
 .profile__avatar {
-  margin-right: 20px;
   height: 190px;
   width: 190px;
   object-fit: cover;
@@ -123,6 +128,13 @@
     text-align: center;
     padding: 20px;
   }
+
+  .profile__avatar-btn {
+    visibility: visible;
+  }
+
+  /* TODO = set content of :after element to "" */
+  /* TODO finish moblie avtar button style  */
 
   .profile__avatar {
     margin-right: 0px;

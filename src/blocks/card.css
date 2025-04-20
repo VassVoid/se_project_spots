@@ -45,7 +45,7 @@
   border: none;
 }
 
-.card__like-btn:hover {
+.card__like .card__like-btn:hover {
   cursor: pointer;
   opacity: 1;
 }
@@ -57,6 +57,13 @@
 
 .card__like-btn_liked:hover {
   background-image: url(../images/liked-icon-liked-hover.svg);
+}
+
+.card__like-count {
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  margin: 3px 0 0;
 }
 
 .card__delete-btn {
@@ -101,5 +108,10 @@
     background-size: contain;
     width: 20px;
     height: 18px;
+  }
+
+  .card__like-count {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
