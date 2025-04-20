@@ -326,5 +326,9 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 deleteForm.addEventListener("submit", handleDeleteSubmit);
+const cancelButton = document.querySelector(".modal__submit-btn_cancel");
+cancelButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
 
 enableValidation(validationConfig);
