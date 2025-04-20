@@ -102,6 +102,7 @@
 }
 
 .modal__title {
+  font-family: Poppins, Arial, sans-serif;
   margin: 0 0 32px;
   font-weight: 500;
   font-size: 32px;
@@ -118,7 +119,17 @@
   text-align: center;
 }
 
+.modal__title-avatar {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 33, 33, 1);
+}
+
 .modal__label {
+  font-family: Poppins, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   color: rgba(33, 33, 33, 0.7);
@@ -158,6 +169,7 @@
 }
 
 .modal__submit-btn {
+  font-family: Poppins, Arial, sans-serif;
   width: 156px;
   padding: 18px 0;
   background-color: rgba(33, 33, 33, 1);
