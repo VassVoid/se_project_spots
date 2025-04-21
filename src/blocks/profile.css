@@ -25,7 +25,9 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   color: white;
-  padding-bottom: 20px;
+  padding-bottom: 12px;
+  border: none;
+  gap: 8px;
 }
 
 .profile__avatar-btn::after {
@@ -135,13 +137,30 @@
     visibility: visible;
   }
 
-  /* TODO = set content of :after element to "" */
-  /* TODO finish moblie avtar button style  */
-
   .profile__avatar {
     margin-right: 0px;
     height: 80px;
     width: 80px;
+  }
+
+  .profile__avatar-btn {
+    width: 23px;
+    height: 23px;
+    top: 52px;
+    left: 52px;
+    gap: 8px;
+    border-radius: 6px;
+    padding: 4px;
+  }
+
+  .profile__avatar-btn::after {
+    visibility: hidden;
+  }
+
+  .profile__pencil-icon {
+    position: absolute;
+    right: 3px;
+    top: 4px;
   }
 
   .profile__name {

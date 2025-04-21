@@ -132,27 +132,21 @@ const cardList = document.querySelector(".cards__list");
 let selectedCard, selectedCardId;
 
 function getCardElement(data) {
-  console.log("Creating card for:", data);
   const cardElement = cardTemplate.content.cloneNode(true).firstElementChild;
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
-  const cardLikeCount = cardElement.querySelector(".card__like-count");
+
+  const isLiked = localStorage.getItem(`card-${data._id}-isLiked`) === "true";
+
+  if (isLiked) {
+    cardLikeBtn.classList.add("card__like-btn_liked");
+  }
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
-
-  if (data && data.likes && Array.isArray(data.likes)) {
-    cardLikeCount.textContent = data.likes.length;
-
-    if (data.likes.some((user) => user._id === currentUser._id)) {
-      cardLikeBtn.classList.add("card__like-btn_liked");
-    }
-  } else {
-    cardLikeCount.textContent = 0;
-  }
 
   cardLikeBtn.addEventListener("click", (evt) => {
     handleLike(evt, data._id);
@@ -189,25 +183,17 @@ function closeModal(modal) {
 
 function handleLike(evt, id) {
   const isLiked = evt.target.classList.contains("card__like-btn_liked");
-  const likeCountElement = evt.target
-    .closest(".card")
-    .querySelector(".card__like-count");
-
-  const currentLikes = parseInt(likeCountElement.textContent);
 
   api
     .handleLikeStatus(id, isLiked)
-    .then((data) => {
-      if (data) {
+    .then((card) => {
+      if (card) {
         evt.target.classList.toggle("card__like-btn_liked");
-        likeCountElement.textContent = data.isLiked
-          ? currentLikes + 1
-          : currentLikes - 1;
+        localStorage.setItem(`card-${id}-isLiked`, !isLiked);
       }
     })
     .catch(console.error);
 }
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;

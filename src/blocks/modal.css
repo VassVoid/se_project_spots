@@ -72,9 +72,6 @@
   top: 0px;
 }
 
-.modal__close-delete:hover {
-}
-
 .modal__close_type_preview {
   background-image: url("../images/close-light.svg");
   top: 0;
@@ -239,6 +236,11 @@
     gap: 0px;
   }
 
+  .modal__form-delete {
+    width: 300px;
+    height: 208px;
+  }
+
   .modal__title {
     font-size: 20px;
     font-weight: 500;
@@ -246,6 +248,14 @@
     margin: 12px 0 24px;
     width: 276px;
     height: 40px;
+  }
+
+  .modal__title-avatar {
+    margin: 12px 0 12px;
+  }
+
+  .modal__title-delete {
+    margin: 12px 0 20px;
   }
 
   .modal__input {
@@ -272,9 +282,36 @@
     line-height: 17.6px;
   }
 
+  .modal__label-avatar {
+    margin-bottom: 20px;
+  }
+
   .modal__submit-btn {
     width: 100%;
     margin-bottom: 12px;
+  }
+
+  .modal__buttons-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal__submit-btn_delete {
+    width: 156px;
+    height: 52px;
+    gap: 8px;
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  .modal__submit-btn_cancel {
+    width: 156px;
+    height: 52px;
+    gap: 8px;
+    border-radius: 8px;
+    border-width: 1px;
+    margin: 0;
   }
 
   .modal__content {
@@ -285,6 +322,14 @@
     border-radius: 8px;
     gap: 24px;
     padding: 12px;
+  }
+
+  .modal__content-delete {
+    gap: 0;
+  }
+
+  .modal__content-avatar {
+    gap: 0;
   }
 
   .modal__caption {
