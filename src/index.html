@@ -21,18 +21,28 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%= require('./images/avatar.jpg')%>"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%= require('./images/pencil-light.svg')%>"
+                alt="Pencil-icon"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              id="image-avatar"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
               <img
                 class="profile__image"
-                src="./images/pencil.svg"
+                id="image-pencil"
+                src="<%= require('./images/pencil.svg')%>"
                 alt="Pencil Icon"
               />Edit Profile
             </button>
@@ -40,7 +50,8 @@
           <button type="button" class="profile__add-btn">
             <img
               class="profile__add-btn-image"
-              src="./images/plus.svg"
+              id="image-plus"
+              src="<%= require('./images/plus.svg')%>"
               alt="Plus Icon"
             />
             <span class="profile__add-btn-text">New Post</span>
@@ -59,7 +70,9 @@
 
                 <div class="card__content">
                   <h2 class="card__title">Mountain house</h2>
-                  <button type="button" class="card__like-btn"></button>
+                  <div class="card__like-container">
+                    <button type="button" class="card__like-btn"></button>
+                  </div>
                 </div>
               </li>
             </template>
@@ -164,6 +177,67 @@
           <img class="modal__image" src="" alt="" />
           <p class="modal__caption"></p>
         </div>
+      </div>
+    </div>
+
+    <div class="modal" id="avatar-modal">
+      <div class="modal__content modal__content-avatar">
+        <button type="button" class="modal__close"></button>
+        <h3 class="modal__title modal__title-avatar">Edit profile Avatar</h3>
+        <form
+          id="avatar-form"
+          name="edit-profile"
+          class="modal__form"
+          novalidate
+        >
+          <label
+            for="profile-avatar-input"
+            class="modal__label modal__label-avatar"
+          >
+            Profile Picture
+            <input
+              id="profile-avatar-input"
+              type="url"
+              class="modal__input"
+              name="avatar"
+              placeholder="Paste the link to an image"
+              required
+            />
+            <span id="profile-avatar-input-error" class="modal__error"></span>
+          </label>
+
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="delete-modal">
+      <div class="modal__content modal__content-delete">
+        <button type="button" class="modal__close modal__close-delete"></button>
+        <h3 class="modal__title modal__title-delete">
+          Are you sure you want to delete this image?
+        </h3>
+        <form
+          id="delete-form"
+          name="edit-profile"
+          class="modal__form .modal__form-delete"
+          novalidate
+        >
+          <div class="modal__buttons-delete">
+            <button
+              type="submit"
+              class="modal__submit-btn modal__submit-btn_delete"
+            >
+              Delete
+            </button>
+            <button
+              type="button"
+              class="modal__submit-btn modal__submit-btn_cancel"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </body>

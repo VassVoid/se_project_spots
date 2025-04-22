@@ -59,6 +59,13 @@
   background-image: url(../images/liked-icon-liked-hover.svg);
 }
 
+.card__like-count {
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  margin: 3px 0 0;
+}
+
 .card__delete-btn {
   background-image: url(../images/delete-icon.svg);
   background-color: transparent;
@@ -101,5 +108,10 @@
     background-size: contain;
     width: 20px;
     height: 18px;
+  }
+
+  .card__like-count {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
