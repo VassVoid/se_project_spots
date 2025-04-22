@@ -7,11 +7,12 @@ import {
   disableButton,
 } from "../scripts/validation.js";
 import Api from "../utils/Api.js";
-import { setButtonText, setDeleteText } from "../utils/helpers.js";
 
 import avatarDefaultSrc from "../images/avatar.jpg";
 import pencilSrc from "../images/pencil.svg";
 import plusSrc from "../images/plus.svg";
+
+import { renderLoading, handleSubmit } from "../utils/utils.js";
 
 const avatarImage = document.getElementById("image-avatar");
 const pencilImage = document.getElementById("image-pencil");
@@ -138,7 +139,7 @@ function getCardElement(data) {
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
-  const isLiked = localStorage.getItem(`card-${data._id}-isLiked`) === "true";
+  const isLiked = data.isLiked;
 
   if (isLiked) {
     cardLikeBtn.classList.add("card__like-btn_liked");
@@ -194,78 +195,58 @@ function handleLike(evt, id) {
     })
     .catch(console.error);
 }
+
 function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true);
-
-  api
-    .editUserInfo({ name: nameInput.value, about: descriptionInput.value })
-    .then((data) => {
-      profileNameEl.textContent = data.name;
-      profileDescriptionEl.textContent = data.about;
-    })
-    .catch(console.error)
-    .finally(() => {
-      setButtonText(submitBtn, false);
-    });
-
-  closeModal(editModal);
+  function makeRequest() {
+    return api
+      .editUserInfo({
+        name: nameInput.value,
+        about: descriptionInput.value,
+      })
+      .then((userData) => {
+        profileNameEl.textContent = userData.name;
+        profileDescriptionEl.textContent = userData.about;
+        closeModal(editModal);
+      });
+  }
+  handleSubmit(makeRequest, evt);
 }
 
 function handleAddCardSubmit(evt) {
-  evt.preventDefault();
-  const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true);
-  api
-    .addCard({ name: cardNameInput.value, link: cardLinkInput.value })
-    .then((data) => {
-      const cardEl = getCardElement(data);
-      cardList.prepend(cardEl);
-      evt.target.reset();
-      disableButton(cardSubmitBtn, validationConfig);
-      closeModal(cardModal);
-    })
-    .catch(console.error)
-    .finally(() => {
-      setButtonText(submitBtn, false);
-    });
+  function makeRequest() {
+    return api
+      .addCard({ name: cardNameInput.value, link: cardLinkInput.value })
+      .then((data) => {
+        const cardEl = getCardElement(data);
+        cardList.prepend(cardEl);
+        evt.target.reset();
+        disableButton(cardSubmitBtn, validationConfig);
+        closeModal(cardModal);
+      });
+  }
+  handleSubmit(makeRequest, evt);
 }
 
 function handleAvatarSubmit(evt) {
-  evt.preventDefault();
-  const submitBtn = evt.submitter;
-  setButtonText(submitBtn, true);
-  api
-    .editAvatarInfo({ avatar: avatarInput.value })
-    .then((data) => {
+  function makeRequest() {
+    return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       avatarImage.src = data.avatar;
       evt.target.reset();
       closeModal(avatarModal);
       disableButton(avatarSubmitBtn, validationConfig);
-    })
-    .catch(console.error)
-    .finally(() => {
-      setButtonText(submitBtn, false);
     });
+  }
+  handleSubmit(makeRequest, evt);
 }
 
 function handleDeleteSubmit(evt) {
-  console.log(selectedCardId);
-  evt.preventDefault();
-  const submitBtn = evt.submitter;
-  setDeleteText(submitBtn, true);
-  api
-    .deleteCard(selectedCardId)
-    .then(() => {
+  function makeRequest() {
+    return api.deleteCard(selectedCardId).then(() => {
       selectedCard.remove();
-    })
-    .catch(console.error)
-    .finally(() => {
-      setDeleteText(submitBtn, false);
+      closeModal(deleteModal);
     });
-
-  closeModal(deleteModal);
+  }
+  handleSubmit(makeRequest, evt);
 }
 
 function handleDeleteCard(cardElement, cardId) {
