@@ -1,3 +1,5 @@
+import { closeModal } from "../pages/index.js";
+
 export function renderLoading(
   isLoading,
   button,

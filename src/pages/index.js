@@ -176,7 +176,7 @@ function openModal(modal) {
   modal.addEventListener("mousedown", handleOverLayClose);
 }
 
-function closeModal(modal) {
+export function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscClose);
   modal.removeEventListener("mousedown", handleOverLayClose);
@@ -219,7 +219,6 @@ function handleAddCardSubmit(evt) {
       .then((data) => {
         const cardEl = getCardElement(data);
         cardList.prepend(cardEl);
-        evt.target.reset();
         disableButton(cardSubmitBtn, validationConfig);
         closeModal(cardModal);
       });
@@ -231,7 +230,6 @@ function handleAvatarSubmit(evt) {
   function makeRequest() {
     return api.editAvatarInfo({ avatar: avatarInput.value }).then((data) => {
       avatarImage.src = data.avatar;
-      evt.target.reset();
       closeModal(avatarModal);
       disableButton(avatarSubmitBtn, validationConfig);
     });
